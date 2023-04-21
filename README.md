@@ -1,5 +1,8 @@
 # Setting Up Linux
 
+## Todo List
+  - [ ] Add script to download Java and compare SHA256 hash sum
+
 ## ExpressVPN
 Download latest version from [ExpressVPN Downloads](https://www.expressvpn.com/latest) page.
 
