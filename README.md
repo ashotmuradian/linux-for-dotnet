@@ -36,6 +36,8 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 7.0
 ```
 
+[Enable tab completion for the .NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
+
 ## Bash and GNOME sessions
 Configure environment variables in `~/.bashrc` and `~/.profile`:
 ```bash
