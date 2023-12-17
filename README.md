@@ -34,6 +34,7 @@ wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 6.0
 ./dotnet-install.sh --channel 7.0
+./dotnet-install.sh --channel 8.0
 ```
 
 [Enable tab completion for the .NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
@@ -75,6 +76,10 @@ export KUBE_CONFIG_PATH="$HOME/.kube/config"
 export KUBE_EDITOR="code -w"
 
 export EDITOR="code -w"
+
+export NUGET_CONCURRENCY_LIMIT=32
+
+ulimit -n 8192
 ```
 
 ## JetBrains Tools
@@ -82,5 +87,23 @@ Log into [JetBrains account](https://account.jetbrains.com) and download the Too
 Extract files from the downloaded archive and run `jetbrains-toolbox` executable.
 Log into account in the Toolbox app.
 
+> Note: set `Maximum Heap Size` configuration parameter of JetBrains tools in the Toolbox
+> app to either `8192` or `16384`.
+
 ## Other Tools
 Install VS Code, Chrome, Edge.
+
+## Increase Limit of Maximum Number of Open Files
+```bash
+sudo nano /etc/security/limits.conf
+```
+
+```conf
+*               soft    nofile            8192
+*               hard    nofile            16384
+```
+
+## Increase Limit of Maximum Number of Open Sockets for NPM
+```bash
+npm -g config set maxsockets 32
+```
