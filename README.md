@@ -2,6 +2,17 @@
 
 ## ExpressVPN (optional)
 
+This step is optional, but if you know in advance that
+your ISP throttles your internet traffic,
+or certain types of traffic, or it unable to take efficient routes,
+or CDN location mismatch is huge,
+then install VPN client before anything else,
+otherwise distro update and the rest of the commands
+are going to take ages to run.
+
+> No ads, this doc is primarily for myself, there are quite a few good VPN service providers,
+> this one just works well in my country.
+
 Download latest version from
 [ExpressVPN Downloads](https://www.expressvpn.com/latest)
 page.
