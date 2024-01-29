@@ -21,17 +21,15 @@ Connect to VPN:
 expressvpn connect smart
 ```
 
-Install latest linux distribution updates:
-  - Fedora
-    ```bash
-    sudo dnf upgrade
-    ```
-  - Ubuntu
-    ```bash
-    sudo apt update
-    ```
+## Linux and Linux Tools
 
-Reboot, most probably kernel version has been updated.
+Install latest linux distribution updates:
+
+```bash
+sudo dnf upgrade
+```
+
+> Reboot, most probably the kernel version has been updated.
 
 ## .NET
 
