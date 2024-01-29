@@ -1,14 +1,22 @@
 # Setting up Fedora Linux for .NET Development
 
 ## ExpressVPN
-Download latest version from [ExpressVPN Downloads](https://www.expressvpn.com/latest) page.
 
-Log into ExpressVPN account, copy activation key from [ExpressVPN Subscriptions](https://www.expressvpn.com/subscriptions) page and activate ExpressVPN via:
+Download latest version from
+[ExpressVPN Downloads](https://www.expressvpn.com/latest)
+page.
+
+Log into ExpressVPN account, copy activation key
+from
+[ExpressVPN Subscriptions](https://www.expressvpn.com/subscriptions)
+page and activate ExpressVPN via:
+
 ```bash
 expressvpn activate
 ```
 
 Connect to VPN:
+
 ```bash
 expressvpn connect smart
 ```
@@ -26,6 +34,7 @@ Install latest linux distribution updates:
 Reboot, most probably kernel version has been updated.
 
 ## .NET
+
 ```bash
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 chmod +x ./dotnet-install.sh
@@ -37,7 +46,9 @@ chmod +x ./dotnet-install.sh
 [Enable tab completion for the .NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
 
 ## Bash and GNOME sessions
+
 Configure environment variables in `~/.bashrc` and `~/.profile`:
+
 ```bash
 export JAVA_HOME="$HOME/.jdks/jdk-20.0.1"
 if [ -d "$JAVA_HOME/bin" ] ; then
@@ -80,7 +91,10 @@ ulimit -n 8192
 ```
 
 ## JetBrains Tools
-Log into [JetBrains account](https://account.jetbrains.com) and download the Toolbox app.
+
+Log into
+[JetBrains account](https://account.jetbrains.com)
+and download the Toolbox app.
 Extract files from the downloaded archive and run `jetbrains-toolbox` executable.
 Log into account in the Toolbox app.
 
@@ -88,9 +102,11 @@ Log into account in the Toolbox app.
 > app to either `8192` or `16384`.
 
 ## Other Tools
+
 Install VS Code, Chrome, Edge.
 
 ## Increase Limit of Maximum Number of Open Files
+
 ```bash
 sudo nano /etc/security/limits.conf
 ```
@@ -101,6 +117,7 @@ sudo nano /etc/security/limits.conf
 ```
 
 ## Increase Limit of Maximum Number of Open Sockets for NPM
+
 ```bash
 npm -g config set maxsockets 32
 ```
