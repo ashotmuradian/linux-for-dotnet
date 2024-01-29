@@ -209,9 +209,10 @@ npm -g config set maxsockets 32
 
 ## Todo List
 
-- [ ] Script to download Java and compare SHA256 hash sum
+- [ ] Azure CLI installation
 - [ ] kubectl installation
 - [ ] Docker installation
   (prefer Docker Engine to Docker Desktop unless Kubernetes cluster is required to run in Docker)
 - [ ] Chrome installation
 - [ ] Edge installation
+- [ ] Script to download Java and compare SHA256 hash sum
