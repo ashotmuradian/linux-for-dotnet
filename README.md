@@ -180,6 +180,10 @@ npm -g config set maxsockets 32
 
 ## Links
 
+- [Install .NET](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual)
+- [Install VS Code](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions)
+- [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - [dotnet autocomplete](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
 - [kubectl autocomplete](https://kubernetes.io/docs/reference/kubectl/quick-reference/#kubectl-autocomplete)
 - [terraform autocomplete](https://developer.hashicorp.com/terraform/cli/commands#shell-tab-completion)
