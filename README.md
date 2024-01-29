@@ -31,6 +31,12 @@ sudo dnf upgrade
 
 > Reboot, most probably the kernel version has been updated.
 
+Install tools for the Network Security Services:
+
+```bash
+sudo dnf install nss-tools
+```
+
 ## .NET
 
 ```bash
