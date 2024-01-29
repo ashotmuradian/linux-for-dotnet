@@ -52,6 +52,16 @@ chmod +x ./dotnet-install.sh
 Configure environment variables in `~/.bashrc` and `~/.profile`:
 
 ```bash
+function _dotnet_bash_complete()
+{
+  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
+  local candidates
+
+  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
+
+  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
+}
+
 export JAVA_HOME="$HOME/.jdks/jdk-20.0.1"
 if [ -d "$JAVA_HOME/bin" ] ; then
     export PATH="$JAVA_HOME/bin:$PATH"
@@ -62,6 +72,8 @@ export DOTNET_CLI_TELEMETRY_OPTOUT="1"
 export DOTNET_ROOT="$HOME/.dotnet"
 if [ -d $DOTNET_ROOT ] ; then
     export PATH="$DOTNET_ROOT:$PATH"
+    
+    complete -f -F _dotnet_bash_complete dotnet
 fi
 
 if [ -d "$DOTNET_ROOT/tools" ] ; then
