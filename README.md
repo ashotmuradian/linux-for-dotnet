@@ -57,6 +57,8 @@ if [ -d "$JAVA_HOME/bin" ] ; then
     export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
+export DOTNET_CLI_TELEMETRY_OPTOUT="1"
+
 export DOTNET_ROOT="$HOME/.dotnet"
 if [ -d $DOTNET_ROOT ] ; then
     export PATH="$DOTNET_ROOT:$PATH"
