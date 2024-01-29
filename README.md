@@ -47,8 +47,6 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 ```
 
-[Enable tab completion for the .NET CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
-
 ## Bash and GNOME sessions
 
 Configure environment variables in `~/.bashrc` and `~/.profile`:
@@ -126,6 +124,9 @@ sudo nano /etc/security/limits.conf
 npm -g config set maxsockets 32
 ```
 
+## Links
+
+- [dotnet autocomplete](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
 ## Todo List
 
 - [ ] Add script to download Java and compare SHA256 hash sum
