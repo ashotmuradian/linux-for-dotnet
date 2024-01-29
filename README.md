@@ -201,5 +201,6 @@ npm -g config set maxsockets 32
 - [ ] Script to download Java and compare SHA256 hash sum
 - [ ] kubectl installation
 - [ ] Docker installation
+  (prefer Docker Engine to Docker Desktop unless Kubernetes cluster is required to run in Docker)
 - [ ] Chrome installation
 - [ ] Edge installation
