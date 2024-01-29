@@ -1,8 +1,5 @@
 # Setting Up Linux
 
-## Todo List
-  - [ ] Add script to download Java and compare SHA256 hash sum
-
 ## ExpressVPN
 Download latest version from [ExpressVPN Downloads](https://www.expressvpn.com/latest) page.
 
@@ -107,3 +104,7 @@ sudo nano /etc/security/limits.conf
 ```bash
 npm -g config set maxsockets 32
 ```
+
+## Todo List
+
+- [ ] Add script to download Java and compare SHA256 hash sum
