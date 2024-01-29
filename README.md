@@ -164,3 +164,4 @@ npm -g config set maxsockets 32
 ## Todo List
 
 - [ ] Add script to download Java and compare SHA256 hash sum
+- [ ] Add Terraform installation
