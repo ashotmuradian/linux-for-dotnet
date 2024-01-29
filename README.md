@@ -95,6 +95,15 @@ if [ -d $NGROK_PATH ] ; then
     export PATH="$NGROK_PATH:$PATH"
 fi
 
+if command -v terraform &> /dev/null
+then
+    alias tf=terraform
+    complete -C "$(readlink -f terraform)" tf
+    
+    export TF_CLI_ARGS_plan='-parallelism=32'
+    export TF_CLI_ARGS_apply='-parallelism=32'
+fi
+
 if command -v kubectl &> /dev/null
 then
     source <(kubectl completion bash)
@@ -149,7 +158,8 @@ npm -g config set maxsockets 32
 ## Links
 
 - [dotnet autocomplete](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
-- [kubectl autocomplete](https://kubernetes.io/docs/reference/kubectl/quick-reference)
+- [kubectl autocomplete](https://kubernetes.io/docs/reference/kubectl/quick-reference/#kubectl-autocomplete)
+- [terraform autocomplete](https://developer.hashicorp.com/terraform/cli/commands#shell-tab-completion)
 
 ## Todo List
 
