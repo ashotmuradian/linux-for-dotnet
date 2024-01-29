@@ -1,4 +1,4 @@
-# Setting Up Linux
+# Setting up Fedora Linux for .NET Development
 
 ## ExpressVPN
 Download latest version from [ExpressVPN Downloads](https://www.expressvpn.com/latest) page.
