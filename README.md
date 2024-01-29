@@ -95,6 +95,14 @@ if [ -d $NGROK_PATH ] ; then
     export PATH="$NGROK_PATH:$PATH"
 fi
 
+if command -v kubectl &> /dev/null
+then
+    source <(kubectl completion bash)
+    
+    alias k=kubectl
+    complete -o default -F __start_kubectl k
+fi
+
 export KUBE_CONFIG_PATH="$HOME/.kube/config"
 
 export KUBE_EDITOR="code -w"
@@ -141,6 +149,8 @@ npm -g config set maxsockets 32
 ## Links
 
 - [dotnet autocomplete](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
+- [kubectl autocomplete](https://kubernetes.io/docs/reference/kubectl/quick-reference)
+
 ## Todo List
 
 - [ ] Add script to download Java and compare SHA256 hash sum
