@@ -167,10 +167,6 @@ Log into account in the Toolbox app.
 > Note: set `Maximum Heap Size` configuration parameter of JetBrains tools in the Toolbox
 > app to either `8192` or `16384`.
 
-## Other Tools
-
-Install VS Code, Chrome, Edge.
-
 ## Increase Limit of Maximum Number of Open Files
 
 ```bash
@@ -200,6 +196,8 @@ npm -g config set maxsockets 32
 
 ## Todo List
 
-- [ ] Add script to download Java and compare SHA256 hash sum
-- [ ] Add kubectl installation
-- [ ] Add Docker installation
+- [ ] Script to download Java and compare SHA256 hash sum
+- [ ] kubectl installation
+- [ ] Docker installation
+- [ ] Chrome installation
+- [ ] Edge installation
