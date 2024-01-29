@@ -37,6 +37,12 @@ Install tools for the Network Security Services:
 sudo dnf install nss-tools
 ```
 
+Install Core Plugins for DNF:
+
+```bash
+sudo dnf install dnf-plugins-core
+```
+
 ## .NET
 
 ```bash
