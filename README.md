@@ -62,6 +62,14 @@ dnf check-update
 sudo dnf install code
 ```
 
+## Terraform
+
+```bash
+sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+sudo dnf install terraform
+terraform -install-autocomplete
+```
+
 ## Bash and GNOME sessions
 
 Configure environment variables in `~/.bashrc` and `~/.profile`:
