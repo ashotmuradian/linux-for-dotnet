@@ -53,6 +53,16 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 ```
 
+Install workloads (optional):
+
+```bash
+dotnet workload update
+dotnet workload install aspire
+dotnet workload install android
+dotnet workload install maui-android
+dotnet workload install wasm-tools
+```
+
 ## VS Code
 
 ```bash
