@@ -92,6 +92,39 @@ dnf check-update
 sudo dnf install code
 ```
 
+## VS Code Extensions
+```bash
+code --install-extension Angular.ng-template
+code --install-extension Dart-Code.dart-code
+code --install-extension Dart-Code.flutter
+code --install-extension GitHub.copilot
+code --install-extension HashiCorp.HCL
+code --install-extension HashiCorp.terraform
+code --install-extension MS-vsliveshare.vsliveshare
+code --install-extension Oracle.mysql-shell-for-vs-code
+code --install-extension esbenp.prettier-vscode
+code --install-extension figma.figma-vscode-extension
+code --install-extension golang.Go
+code --install-extension meta.relay
+code --install-extension ms-azuretools.vscode-azureresourcegroups
+code --install-extension ms-azuretools.vscode-azureterraform
+code --install-extension ms-azuretools.vscode-bicep
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-dotnettools.csdevkit
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-mssql.data-workspace-vscode
+code --install-extension ms-mssql.mssql
+code --install-extension ms-mssql.sql-database-projects-vscode
+code --install-extension ms-ossdata.vscode-postgresql
+code --install-extension ms-toolsai.vscode-ai
+code --install-extension ms-toolsai.vscode-ai-remote
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-vscode.azure-account
+code --install-extension ms-vscode.hexeditor
+code --install-extension ms-vscode.vscode-node-azure-pack
+code --install-extension redhat.vscode-yaml
+```
+
 ## Terraform
 
 ```bash
