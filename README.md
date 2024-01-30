@@ -137,19 +137,16 @@ terraform -install-autocomplete
 
 ## GNOME
 
-Enable _Minimize_, _Maximize_ and _Close_ buttons.
+Enable _Minimize_, _Maximize_ and _Close_ window buttons.
 
 ```
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 ```
 
-> Note: the colon ':' symbol defines the layout,
->
-> ":minimize,maximize,close"  - place buttons on the right side.
->
-> "close,minimize,maximize:"  - place buttons on the left side.
->
-> "close:minimize,maximize:"  - mixed placement.
+> Note how the colon ':' symbol defines the layout:
+> - `:minimize,maximize,close`  - place buttons on the right side.
+> - `close,minimize,maximize:`  - place buttons on the left side.
+> - `close:minimize,maximize`  - mixed placement.
 
 ## Bash and GNOME sessions
 
