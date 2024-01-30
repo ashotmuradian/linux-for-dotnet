@@ -74,6 +74,15 @@ dotnet workload install maui-android
 dotnet workload install wasm-tools
 ```
 
+## Azure CLI
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo dnf install https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm
+sudo dnf install azure-cli
+az config set core.collect_telemetry=false
+az config set core.allow_broker=false
+```
+
 ## VS Code
 
 ```bash
@@ -198,6 +207,7 @@ npm -g config set maxsockets 32
 ## Links
 
 - [Install .NET](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual)
+- [Install Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=dnf)
 - [Install VS Code](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions)
 - [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
@@ -209,7 +219,6 @@ npm -g config set maxsockets 32
 
 ## Todo List
 
-- [ ] Azure CLI installation
 - [ ] kubectl installation
 - [ ] Docker installation
   (prefer Docker Engine to Docker Desktop unless Kubernetes cluster is required to run in Docker)
