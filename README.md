@@ -75,6 +75,7 @@ dotnet workload install wasm-tools
 ```
 
 ## Azure CLI
+
 ```bash
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo dnf install https://packages.microsoft.com/config/rhel/9.0/packages-microsoft-prod.rpm
@@ -93,6 +94,7 @@ sudo dnf install code
 ```
 
 ## VS Code Extensions
+
 ```bash
 code --install-extension Angular.ng-template
 code --install-extension Dart-Code.dart-code
