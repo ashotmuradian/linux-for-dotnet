@@ -1,5 +1,23 @@
 # Setting up Fedora Linux for .NET Development
 
+<!-- TOC -->
+* [Setting up Fedora Linux for .NET Development](#setting-up-fedora-linux-for-net-development)
+  * [ExpressVPN (optional)](#expressvpn-optional)
+  * [Linux and Linux Tools](#linux-and-linux-tools)
+  * [.NET](#net)
+  * [Azure CLI](#azure-cli)
+  * [VS Code](#vs-code)
+  * [VS Code Extensions](#vs-code-extensions)
+  * [Terraform](#terraform)
+  * [GNOME](#gnome)
+  * [Bash and GNOME sessions](#bash-and-gnome-sessions)
+  * [JetBrains Tools](#jetbrains-tools)
+  * [Increase Limit of Maximum Number of Open Files](#increase-limit-of-maximum-number-of-open-files)
+  * [Increase Limit of Maximum Number of Open Sockets for NPM](#increase-limit-of-maximum-number-of-open-sockets-for-npm)
+  * [Links](#links)
+  * [Todo List](#todo-list)
+<!-- TOC -->
+
 ## ExpressVPN (optional)
 
 This step is optional, but if you know in advance that
