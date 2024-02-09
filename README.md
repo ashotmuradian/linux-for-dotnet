@@ -14,6 +14,7 @@
   * [JetBrains Tools](#jetbrains-tools)
   * [Increase Limit of Maximum Number of Open Files](#increase-limit-of-maximum-number-of-open-files)
   * [Increase Limit of Maximum Number of Open Sockets for NPM](#increase-limit-of-maximum-number-of-open-sockets-for-npm)
+  * [Fonts](#fonts)
   * [Links](#links)
   * [Todo List](#todo-list)
 <!-- TOC -->
@@ -270,6 +271,26 @@ sudo nano /etc/security/limits.conf
 npm -g config set maxsockets 32
 ```
 
+## Fonts
+ - Copy a `C:\Windows\Fonts` directory to `/usr/share/fonts/microsoft-fonts`.
+ - Clone [Google Fonts GitHub repo](https://github.com/google/fonts) and copy the directory to `/usr/share/fonts/google-fonts`.
+ - Set appropriate font directories and files permissions and re-generate fonts cache.
+   ```bash
+   sudo chmod 644 /usr/share/fonts/microsoft-fonts/*
+   sudo chmod 644 /usr/share/fonts/google-fonts/*
+   fc-cache -fv
+   fc-cache-32 -fv
+   sudo dnf install gnome-tweaks
+   ```
+ - Run `gnome-tweaks` in the terminal and configure the appropriate font settings under the _Fonts_ section. Here are typical settings I use for a 32″ 4K display.
+   - Interface Text: `Segoe UI Regular, 14`.
+   - Document Text: `Segoe UI Regular, 14`.
+   - Monospace Text: `Consolas Regular, 14`.
+   - Legacy Window Titles: `Segoe UI Regular, 14`.
+   - Hinting: `Full`.
+   - Antialiasing: `Subpixel`.
+   - Scaling Factor: `1.00`.
+
 ## Links
 
 - [Install .NET](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual)
@@ -282,6 +303,7 @@ npm -g config set maxsockets 32
 - [dotnet autocomplete](https://learn.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete)
 - [kubectl autocomplete](https://kubernetes.io/docs/reference/kubectl/quick-reference/#kubectl-autocomplete)
 - [terraform autocomplete](https://developer.hashicorp.com/terraform/cli/commands#shell-tab-completion)
+- [Install Microsoft Fonts](https://wiki.archlinux.org/title/Microsoft_fonts)
 
 ## Todo List
 
