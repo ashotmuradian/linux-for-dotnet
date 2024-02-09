@@ -283,10 +283,10 @@ npm -g config set maxsockets 32
    sudo dnf install gnome-tweaks
    ```
  - Run `gnome-tweaks` in the terminal and configure the appropriate font settings under the _Fonts_ section. Here are typical settings I use for a 32″ 4K display.
-   - Interface Text: `Segoe UI Regular, 14`.
-   - Document Text: `Segoe UI Regular, 14`.
-   - Monospace Text: `Consolas Regular, 14`.
-   - Legacy Window Titles: `Segoe UI Regular, 14`.
+   - Interface Text: `Roboto Regular, 14`.
+   - Document Text: `Roboto Regular, 14`.
+   - Monospace Text: `Roboto Mono Regular, 14`.
+   - Legacy Window Titles: `Roboto Regular, 14`.
    - Hinting: `Full`.
    - Antialiasing: `Subpixel`.
    - Scaling Factor: `1.00`.
