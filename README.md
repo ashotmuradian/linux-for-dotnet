@@ -273,7 +273,7 @@ npm -g config set maxsockets 32
 
 ## Fonts
  - Copy a `C:\Windows\Fonts` directory to `/usr/share/fonts/microsoft-fonts`.
- - Clone [Google Fonts GitHub repo](https://github.com/google/fonts) and copy the directory to `/usr/share/fonts/google-fonts`.
+ - Download [Google Fonts](https://fonts.google.com/), extract and copy files to `/usr/share/fonts/google-fonts`.
  - Set appropriate font directories and files permissions and re-generate fonts cache.
    ```bash
    sudo chmod 644 /usr/share/fonts/microsoft-fonts/*
