@@ -282,14 +282,9 @@ npm -g config set maxsockets 32
    fc-cache-32 -fv
    sudo dnf install gnome-tweaks
    ```
- - Run `gnome-tweaks` in the terminal and configure the appropriate font settings under the _Fonts_ section. Here are typical settings I use for a 32″ 4K display.
-   - Interface Text: `Roboto Regular, 14`.
-   - Document Text: `Roboto Regular, 14`.
-   - Monospace Text: `Roboto Mono Regular, 14`.
-   - Legacy Window Titles: `Roboto Regular, 14`.
+ - Run `gnome-tweaks` and configure font rendering settings under the _Fonts_ section.
    - Hinting: `Full`.
    - Antialiasing: `Subpixel`.
-   - Scaling Factor: `1.00`.
 
 ## Links
 
