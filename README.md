@@ -78,6 +78,8 @@ sudo dnf install dnf-plugins-core
 Configure Git to ensure line endings in files you checkout are correct for Linux.
 ```bash
 git config --global core.autocrlf input
+git config --global user.email "<EMAIL>"
+git config --global core.name "<NAME>"
 ```
 
 ## .NET
