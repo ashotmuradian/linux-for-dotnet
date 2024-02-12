@@ -4,6 +4,7 @@
 * [Setting up Fedora Linux for .NET Development](#setting-up-fedora-linux-for-net-development)
   * [ExpressVPN (optional)](#expressvpn-optional)
   * [Linux and Linux Tools](#linux-and-linux-tools)
+  * [Git](#git)
   * [.NET](#net)
   * [Azure CLI](#azure-cli)
   * [VS Code](#vs-code)
@@ -71,6 +72,12 @@ Install Core Plugins for DNF:
 
 ```bash
 sudo dnf install dnf-plugins-core
+```
+
+## Git
+Configure Git to ensure line endings in files you checkout are correct for Linux.
+```bash
+git config --global core.autocrlf input
 ```
 
 ## .NET
