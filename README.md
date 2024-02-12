@@ -141,6 +141,7 @@ code --install-extension ms-azuretools.vscode-azureterraform
 code --install-extension ms-azuretools.vscode-bicep
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-dotnettools.csdevkit
+code --install-extension ms-graph.kiota
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension ms-mssql.data-workspace-vscode
 code --install-extension ms-mssql.mssql
