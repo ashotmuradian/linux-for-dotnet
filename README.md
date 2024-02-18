@@ -92,6 +92,16 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 ```
 
+> Note: `dotnet` command becomes available after [configuring PATH environment variable](#bash-and-gnome-sessions).
+
+Install particular .NET SDK versions (optional):
+
+```bash
+./dotnet-install.sh --version 8.0.100
+./dotnet-install.sh --version 8.0.101
+./dotnet-install.sh --version 8.0.102
+```
+
 Install workloads (optional):
 
 ```bash
