@@ -164,6 +164,7 @@ code --install-extension ms-vscode.azure-account
 code --install-extension ms-vscode.hexeditor
 code --install-extension ms-vscode.vscode-node-azure-pack
 code --install-extension redhat.vscode-yaml
+code --install-extension vitest.explorer
 ```
 
 ## Terraform
