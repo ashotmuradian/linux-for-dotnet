@@ -102,6 +102,7 @@ Install particular .NET SDK versions (optional):
 ./dotnet-install.sh --version 8.0.102
 ./dotnet-install.sh --version 8.0.200
 ./dotnet-install.sh --version 8.0.201
+./dotnet-install.sh --version 8.0.202
 ```
 
 Install workloads (optional):
