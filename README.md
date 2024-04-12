@@ -239,18 +239,19 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 
 ## Bash and GNOME sessions
 
-Configure environment variables in `~/.bashrc` and `~/.profile`:
+Configure environment variables in `~/.bashrc`:
 
 ```bash
-function _dotnet_bash_complete()
-{
-  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
-  local candidates
-
-  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
-
-  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
-}
+# Uncomment if the .NET SDK was installed using the dotnet-install script.
+#function _dotnet_bash_complete()
+#{
+#  local cur="${COMP_WORDS[COMP_CWORD]}" IFS=$'\n'
+#  local candidates
+#
+#  read -d '' -ra candidates < <(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)
+#
+#  read -d '' -ra COMPREPLY < <(compgen -W "${candidates[*]:-}" -- "$cur")
+#}
 
 export JAVA_HOME="$HOME/.jdks/jdk-20.0.1"
 if [ -d "$JAVA_HOME/bin" ] ; then
