@@ -6,6 +6,8 @@
   * [Linux and Linux Tools](#linux-and-linux-tools)
   * [Git](#git)
   * [.NET](#net)
+    * [Installation using package manager](#installation-using-package-manager)
+    * [Installation using `dotnet-install` script](#installation-using-dotnet-install-script)
   * [Azure CLI](#azure-cli)
   * [VS Code](#vs-code)
   * [VS Code Extensions](#vs-code-extensions)
@@ -24,7 +26,7 @@
 
 This step is optional, but if you know in advance that
 your ISP throttles your internet traffic,
-or certain types of traffic, or it unable to take efficient routes,
+or certain types of traffic, or unable to take efficient routes,
 or CDN location mismatch is huge,
 then install VPN client before anything else,
 otherwise distro update and the rest of the commands
@@ -75,7 +77,9 @@ sudo dnf install dnf-plugins-core
 ```
 
 ## Git
+
 Configure Git to ensure line endings in files you checkout are correct for Linux.
+
 ```bash
 git config --global core.autocrlf input
 git config --global user.email "<EMAIL>"
@@ -83,6 +87,55 @@ git config --global core.name "<NAME>"
 ```
 
 ## .NET
+
+### Installation using package manager
+
+Install .NET SDKs:
+
+```bash
+sudo dnf install \
+  dotnet-sdk-6.0 \
+  dotnet-sdk-7.0 \
+  dotnet-sdk-8.0
+```
+
+Install the managed symbol (pdb) files useful to debug the .NET SDK, .NET Runtime and ASP.NET Core runtime themselves:
+
+```bash
+sudo dnf install \
+  dotnet-sdk-dbg-8.0 \
+  dotnet-runtime-dbg-8.0 \
+  aspnetcore-runtime-dbg-8.0
+```
+
+> Note: the symbol files provide you with an ability to not only debug the .NET SDK itself
+> but also to navigate through the .NET source code during development. Install them if you
+> wish Rider to navigate you to the source code files of .NET types instead of decompiled ones.
+
+Install the archives of collections of packages needed to build the .NET SDK itself (optional):
+
+```bash
+sudo dnf install \
+  dotnet-sdk-6.0-source-built-artifacts \
+  dotnet-sdk-7.0-source-built-artifacts \
+  dotnet-sdk-8.0-source-built-artifacts
+```
+
+> Note: Install these packages if you build the .NET SDK itself from the source code.
+
+Install workloads (optional):
+
+```bash
+dotnet workload update
+dotnet workload install aspire
+dotnet workload install android
+dotnet workload install maui-android
+dotnet workload install wasm-tools
+```
+
+### Installation using `dotnet-install` script
+
+Alternatively, use the `dotnet-install` script to install the .NET SDKs.
 
 ```bash
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
@@ -92,7 +145,7 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 ```
 
-> Note: `dotnet` command becomes available after [configuring PATH environment variable](#bash-and-gnome-sessions).
+> Note: the `dotnet` command becomes available after [configuring PATH environment variable](#bash-and-gnome-sessions).
 
 Install particular .NET SDK versions (optional):
 
@@ -104,16 +157,8 @@ Install particular .NET SDK versions (optional):
 ./dotnet-install.sh --version 8.0.200
 ./dotnet-install.sh --version 8.0.201
 ./dotnet-install.sh --version 8.0.202
-```
-
-Install workloads (optional):
-
-```bash
-dotnet workload update
-dotnet workload install aspire
-dotnet workload install android
-dotnet workload install maui-android
-dotnet workload install wasm-tools
+./dotnet-install.sh --version 8.0.203
+./dotnet-install.sh --version 8.0.204
 ```
 
 ## Azure CLI
@@ -214,16 +259,17 @@ fi
 
 export DOTNET_CLI_TELEMETRY_OPTOUT="1"
 
-export DOTNET_ROOT="$HOME/.dotnet"
-if [ -d $DOTNET_ROOT ] ; then
-    export PATH="$DOTNET_ROOT:$PATH"
-    
-    complete -f -F _dotnet_bash_complete dotnet
-fi
-
-if [ -d "$DOTNET_ROOT/tools" ] ; then
-    export PATH="$DOTNET_ROOT/tools:$PATH"
-fi
+# Uncomment if the .NET SDK was installed using the dotnet-install script.
+#export DOTNET_ROOT="$HOME/.dotnet"
+#if [ -d $DOTNET_ROOT ] ; then
+#    export PATH="$DOTNET_ROOT:$PATH"
+#    
+#    complete -f -F _dotnet_bash_complete dotnet
+#fi
+#
+#if [ -d "$DOTNET_ROOT/tools" ] ; then
+#    export PATH="$DOTNET_ROOT/tools:$PATH"
+#fi
 
 export NODE_PATH="$HOME/.node/bin"
 if [ -d $NODE_PATH ] ; then
@@ -297,19 +343,20 @@ npm -g config set maxsockets 32
 ```
 
 ## Fonts
- - Copy a `C:\Windows\Fonts` directory to `/usr/share/fonts/microsoft-fonts`.
- - Download [Google Fonts](https://fonts.google.com/), extract and copy files to `/usr/share/fonts/google-fonts`.
- - Set appropriate font directories and files permissions and re-generate fonts cache.
-   ```bash
-   sudo chmod 644 /usr/share/fonts/microsoft-fonts/*
-   sudo chmod 644 /usr/share/fonts/google-fonts/*
-   fc-cache -fv
-   fc-cache-32 -fv
-   sudo dnf install gnome-tweaks
-   ```
- - Run `gnome-tweaks` and configure font rendering settings under the _Fonts_ section.
-   - Hinting: `Full`.
-   - Antialiasing: `Subpixel`.
+
+- Copy a `C:\Windows\Fonts` directory to `/usr/share/fonts/microsoft-fonts`.
+- Download [Google Fonts](https://fonts.google.com/), extract and copy files to `/usr/share/fonts/google-fonts`.
+- Set appropriate font directories and files permissions and re-generate fonts cache.
+  ```bash
+  sudo chmod 644 /usr/share/fonts/microsoft-fonts/*
+  sudo chmod 644 /usr/share/fonts/google-fonts/*
+  fc-cache -fv
+  fc-cache-32 -fv
+  sudo dnf install gnome-tweaks
+  ```
+- Run `gnome-tweaks` and configure font rendering settings under the _Fonts_ section.
+  - Hinting: `Full`.
+  - Antialiasing: `Subpixel`.
 
 ## Links
 
