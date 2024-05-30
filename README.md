@@ -2,7 +2,6 @@
 
 <!-- TOC -->
 * [Setting up Fedora Linux for .NET Development](#setting-up-fedora-linux-for-net-development)
-  * [ExpressVPN (optional)](#expressvpn-optional)
   * [Linux and Linux Tools](#linux-and-linux-tools)
   * [Git](#git)
   * [.NET](#net)
@@ -21,38 +20,6 @@
   * [Links](#links)
   * [Todo List](#todo-list)
 <!-- TOC -->
-
-## ExpressVPN (optional)
-
-This step is optional, but if you know in advance that
-your ISP throttles your internet traffic,
-or certain types of traffic, or unable to take efficient routes,
-or CDN location mismatch is huge,
-then install VPN client before anything else,
-otherwise distro update and the rest of the commands
-are going to take ages to run.
-
-> No ads, this doc is primarily for myself, there are quite a few good VPN service providers,
-> this one just works well in my country.
-
-Download latest version from
-[ExpressVPN Downloads](https://www.expressvpn.com/latest)
-page.
-
-Log into ExpressVPN account, copy activation key
-from
-[ExpressVPN Subscriptions](https://www.expressvpn.com/subscriptions)
-page and activate ExpressVPN via:
-
-```bash
-expressvpn activate
-```
-
-Connect to VPN:
-
-```bash
-expressvpn connect smart
-```
 
 ## Linux and Linux Tools
 
