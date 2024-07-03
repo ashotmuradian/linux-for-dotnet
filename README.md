@@ -249,6 +249,11 @@ if [ -d $GOPATH ] ; then
     export PATH="$GOPATH:$PATH"
 fi
 
+export PROTOC_PATH="$HOME/.protoc/protoc-27.2-linux-x86_64/bin"
+if [ -d $PROTOC_PATH ]; then
+    export PATH="$PROTOC_PATH:$PATH"
+fi
+
 export NGROK_PATH="$HOME/.ngrok"
 if [ -d $NGROK_PATH ] ; then
     export PATH="$NGROK_PATH:$PATH"
