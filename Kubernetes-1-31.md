@@ -110,4 +110,5 @@ sudo install -o root -g root -m 0755 helm /usr/local/bin/helm
 
 ```sh
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
 ```
