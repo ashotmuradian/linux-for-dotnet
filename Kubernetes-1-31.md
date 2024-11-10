@@ -89,6 +89,7 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.0
 
 ```sh
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+kubectl label nodes --all node.kubernetes.io/exclude-from-external-load-balancers-
 ```
 
 ```sh
