@@ -55,7 +55,7 @@ sudo dnf config-manager setopt kubernetes.enabled=0
 sudo cp /etc/containerd/config.toml /etc/containerd/config.toml.backup
 containerd config default | sudo tee /etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup = false$/SystemdCgroup = true/' /etc/containerd/config.toml
-sudo sed -i 's/registry.k8s.io\/pause:3.8/registry.k8s.io\/pause:3.11/' /etc/containerd/config.toml
+sudo sed -i 's/registry.k8s.io\/pause:3.8/registry.k8s.io\/pause:3.10/' /etc/containerd/config.toml
 ```
 
 ```sh
