@@ -59,8 +59,7 @@ sudo systemctl enable --now kubelet
 ```
 
 ```sh
-cat > kubeadm-config.yaml <<EOF
-# kubeadm-config.yaml
+sudo kubeadm init --config /dev/stdin <<EOF
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
 kubernetesVersion: v1.31.0
@@ -72,3 +71,4 @@ apiVersion: kubelet.config.k8s.io/v1beta1
 cgroupDriver: systemd
 EOF
 ```
+
