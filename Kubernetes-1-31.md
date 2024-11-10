@@ -147,4 +147,15 @@ subjects:
   name: admin-user
   namespace: kubernetes-dashboard
 EOF
+
+kubectl apply -f /dev/stdin <<EOF
+apiVersion: v1
+kind: Secret
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: "admin-user"   
+type: kubernetes.io/service-account-token
+EOF
 ```
