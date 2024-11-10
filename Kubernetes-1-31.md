@@ -103,6 +103,11 @@ sudo install -o root -g root -m 0755 kubectl-calico /usr/local/bin/kubectl-calic
 ```
 
 ```sh
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl-convert"
+sudo install -o root -g root -m 0755 kubectl-convert /usr/local/bin/kubectl-convert
+```
+
+```sh
 curl -LO https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
 tar -zxvf helm-v3.16.2-linux-amd64.tar.gz linux-amd64/helm --strip-components=1
 sudo install -o root -g root -m 0755 helm /usr/local/bin/helm
