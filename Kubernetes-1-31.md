@@ -95,3 +95,8 @@ kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 curl -L https://github.com/projectcalico/calico/releases/download/v3.29.0/calicoctl-linux-amd64 -o calicoctl
 sudo install -o root -g root -m 0755 calicoctl /usr/local/bin/calicoctl
 ```
+
+```sh
+curl -L https://github.com/projectcalico/calico/releases/download/v3.29.0/calicoctl-linux-amd64 -o kubectl-calico
+sudo install -o root -g root -m 0755 kubectl-calico /usr/local/bin/kubectl-calico
+```
