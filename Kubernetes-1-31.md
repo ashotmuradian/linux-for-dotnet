@@ -1,4 +1,5 @@
-## Open Ports in Firewall
+# Kubernetes 1.31
+
 ```sh
 # https://kubernetes.io/docs/reference/networking/ports-and-protocols/
 
