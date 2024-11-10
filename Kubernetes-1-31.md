@@ -160,6 +160,18 @@ type: kubernetes.io/service-account-token
 EOF
 ```
 
-> `kubectl -n kubernetes-dashboard create token admin-user`
-> 
-> `kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d`
+--------------------------------
+## Dashboard Access
+
+### Getting a Bearer Token for ServiceAccount
+
+```sh
+kubectl -n kubernetes-dashboard create token admin-user
+```
+
+### Getting a long-lived Bearer Token for ServiceAccount
+
+```sh
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+```
+
