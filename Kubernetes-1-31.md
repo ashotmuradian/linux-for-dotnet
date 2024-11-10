@@ -11,7 +11,6 @@ sudo firewall-cmd --add-port=2379-2380/tcp
 sudo firewall-cmd --add-port=30000-32767/tcp
 ```
 ```sh
-# Set SELinux in permissive mode (effectively disabling it)
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 ```
@@ -19,7 +18,6 @@ sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 > Reboot
 
 ```sh
-# This overwrites any existing configuration in /etc/yum.repos.d/kubernetes.repo
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -42,4 +40,23 @@ sudo dnf config-manager setopt kubernetes.enabled=0
 ```sh
 sudo systemctl enable --now containerd
 sudo systemctl enable --now kubelet
+```
+
+```sh
+sudo cp /etc/containerd/config.toml /etc/containerd/config.toml.backup
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo sed -i 's/SystemdCgroup = false$/SystemdCgroup = true/' /etc/containerd/config.toml
+```
+
+```sh
+cat > kubeadm-config.yaml <<EOF
+# kubeadm-config.yaml
+kind: ClusterConfiguration
+apiVersion: kubeadm.k8s.io/v1beta4
+kubernetesVersion: v1.21.0
+---
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd
+EOF
 ```
