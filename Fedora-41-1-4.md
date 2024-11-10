@@ -9,6 +9,10 @@ sudo dnf remove -y PackageKit-command-not-found
 ```
 
 ```sh
+sudo dnf install -y nss-tools dnf-plugins-core
+```
+
+```sh
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
