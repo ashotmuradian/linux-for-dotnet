@@ -42,6 +42,8 @@ sudo dnf install -y \
   dotnet-runtime-dbg-8.0 \
   aspnetcore-runtime-dbg-8.0 \
   dotnet-sdk-8.0-source-built-artifacts
+```
 
+```sh
 dotnet workload update
 ```
