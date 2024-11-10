@@ -1,4 +1,4 @@
-## Peripherals and Desktop Environment
+## Desktop Environment and Peripherals
 
 ```sh
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
