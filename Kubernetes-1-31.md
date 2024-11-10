@@ -38,3 +38,8 @@ sudo dnf install -y kubelet kubeadm kubectl
 ```sh
 sudo dnf config-manager setopt kubernetes.enabled=0
 ```
+
+```sh
+sudo systemctl enable --now containerd
+sudo systemctl enable --now kubelet
+```
