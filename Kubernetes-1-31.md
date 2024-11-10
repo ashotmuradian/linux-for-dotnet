@@ -38,14 +38,14 @@ sudo dnf config-manager setopt kubernetes.enabled=0
 ```
 
 ```sh
-sudo systemctl enable --now containerd
-sudo systemctl enable --now kubelet
-```
-
-```sh
 sudo cp /etc/containerd/config.toml /etc/containerd/config.toml.backup
 containerd config default | sudo tee /etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup = false$/SystemdCgroup = true/' /etc/containerd/config.toml
+```
+
+```sh
+sudo systemctl enable --now containerd
+sudo systemctl enable --now kubelet
 ```
 
 ```sh
