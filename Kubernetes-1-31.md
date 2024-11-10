@@ -101,3 +101,9 @@ kubectl label nodes --all node.kubernetes.io/exclude-from-external-load-balancer
 curl -L https://github.com/projectcalico/calico/releases/download/v3.29.0/calicoctl-linux-amd64 -o kubectl-calico
 sudo install -o root -g root -m 0755 kubectl-calico /usr/local/bin/kubectl-calico
 ```
+
+```sh
+curl -LO https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
+tar -zxvf helm-v3.16.2-linux-amd64.tar.gz linux-amd64/helm --strip-components=1
+sudo install -o root -g root -m 0755 helm /usr/local/bin/helm
+```
