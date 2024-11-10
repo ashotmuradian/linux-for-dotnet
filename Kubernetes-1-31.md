@@ -85,11 +85,11 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ```sh
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.0/manifests/calico.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 
 ```sh
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.0/manifests/calico.yaml
 ```
 
 ```sh
