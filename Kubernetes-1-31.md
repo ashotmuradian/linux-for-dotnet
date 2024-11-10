@@ -107,3 +107,7 @@ curl -LO https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
 tar -zxvf helm-v3.16.2-linux-amd64.tar.gz linux-amd64/helm --strip-components=1
 sudo install -o root -g root -m 0755 helm /usr/local/bin/helm
 ```
+
+```sh
+helm repo add bitnami https://charts.bitnami.com/bitnami
+```
