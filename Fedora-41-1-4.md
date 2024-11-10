@@ -27,5 +27,16 @@ sudo dnf remove -y PackageKit-command-not-found
 ```
 
 ```sh
-sudo dnf install -y nss-tools dnf-plugins-core code ./google-chrome-stable_current_x86_64.rpm
+sudo dnf install -y \
+  nss-tools \
+  dnf-plugins-core \
+  ./google-chrome-stable_current_x86_64.rpm dotnet-sdk-8.0 \
+  code \
+  dotnet-sdk-8.0 \
+  dotnet-sdk-dbg-8.0 \
+  dotnet-runtime-dbg-8.0 \
+  aspnetcore-runtime-dbg-8.0 \
+  dotnet-sdk-8.0-source-built-artifacts
+
+dotnet workload update
 ```
