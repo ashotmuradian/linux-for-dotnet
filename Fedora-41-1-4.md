@@ -1,6 +1,10 @@
 ## Desktop Environment and Peripherals
 
 ```sh
+sudo dnf upgrade
+```
+
+```sh
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.25
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
