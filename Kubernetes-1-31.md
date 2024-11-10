@@ -10,6 +10,15 @@ sudo firewall-cmd --add-port=10259/tcp
 sudo firewall-cmd --add-port=2379-2380/tcp
 sudo firewall-cmd --add-port=30000-32767/tcp
 ```
+
+```sh
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.ipv4.ip_forward = 1
+EOF
+
+sudo sysctl --system
+```
+
 ```sh
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
