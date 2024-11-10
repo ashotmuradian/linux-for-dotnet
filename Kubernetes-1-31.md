@@ -64,6 +64,8 @@ cat > kubeadm-config.yaml <<EOF
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
 kubernetesVersion: v1.31.0
+networking:
+  podSubnet: "10.0.0.0/9"
 ---
 kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1
