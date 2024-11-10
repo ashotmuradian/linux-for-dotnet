@@ -30,3 +30,11 @@ gpgkey=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
 exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
 EOF
 ```
+
+```sh
+sudo dnf install -y kubelet kubeadm kubectl
+```
+
+```sh
+sudo dnf config-manager setopt kubernetes.enabled=0
+```
