@@ -24,6 +24,11 @@ sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 ```
 
+```sh
+sudo touch /etc/systemd/zram-generator.conf
+sudo dnf remove -y zram-generator-defaults
+```
+
 > Reboot
 
 ```sh
