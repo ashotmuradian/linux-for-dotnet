@@ -196,8 +196,8 @@ kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"
 ## Infra
 
 ```sh
-helm upgrade --install rabbitmq bitnami/rabbitmq --create-namespace --namespace infra | tee kubernetes-rabbitmq
-helm upgrade --install kafka bitnami/kafka --create-namespace --namespace infra | tee kubernetes-kafka
-helm upgrade --install redis bitnami/redis --create-namespace --namespace infra | tee kubernetes-redis
-helm upgrade --install postgresql bitnami/postgresql --set image.tag=11 --create-namespace --namespace infra | tee kubernetes-postgresql
+helm upgrade --install rabbitmq bitnami/rabbitmq --create-namespace --namespace infra | tee kubernetes-rabbitmq.md
+helm upgrade --install kafka bitnami/kafka --create-namespace --namespace infra | tee kubernetes-kafka.md
+helm upgrade --install redis bitnami/redis --create-namespace --namespace infra | tee kubernetes-redis.md
+helm upgrade --install postgresql bitnami/postgresql --set image.tag=11 --create-namespace --namespace infra | tee kubernetes-postgresql.md
 ```
