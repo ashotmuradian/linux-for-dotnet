@@ -183,8 +183,10 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   hostPath:
-    path: /mnt/data
+    path: /mnt/data/local-pv-0
 EOF
+
+sudo chmod 777 /mnt/data/local-pv-0
 ```
 
 --------------------------------
