@@ -174,12 +174,12 @@ kubectl apply -f /dev/stdin <<EOF
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-pv
+  name: local-pv-1
 spec:
   capacity:
-    storage: 100Gi
+    storage: 8Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   hostPath:
