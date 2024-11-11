@@ -158,6 +158,17 @@ metadata:
     kubernetes.io/service-account.name: "admin-user"   
 type: kubernetes.io/service-account-token
 EOF
+
+kubectl apply -f /dev/stdin <<EOF
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+EOF
 ```
 
 --------------------------------
