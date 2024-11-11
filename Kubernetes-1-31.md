@@ -174,7 +174,7 @@ kubectl apply -f /dev/stdin <<EOF
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-pv-1
+  name: local-pv-0
 spec:
   capacity:
     storage: 8Gi
