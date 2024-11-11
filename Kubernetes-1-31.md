@@ -179,7 +179,7 @@ spec:
   capacity:
     storage: 100Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   storageClassName: local-storage
   hostPath:
