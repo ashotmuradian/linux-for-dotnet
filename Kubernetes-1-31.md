@@ -121,7 +121,7 @@ helm repo update
 
 ```sh
 helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
-helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard | tee ./kubernetes-dashboard.md
 ```
 
 ```sh
@@ -191,3 +191,13 @@ kubectl -n kubernetes-dashboard create token admin-user
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
 ```
 
+--------------------------------
+
+## Infra
+
+```sh
+helm upgrade --install rabbitmq bitnami/rabbitmq --create-namespace --namespace infra | tee kubernetes-rabbitmq
+helm upgrade --install kafka bitnami/kafka --create-namespace --namespace infra | tee kubernetes-kafka
+helm upgrade --install redis bitnami/redis --create-namespace --namespace infra | tee kubernetes-redis
+helm upgrade --install postgresql bitnami/postgresql --set image.tag=11 --create-namespace --namespace infra | tee kubernetes-postgresql
+```
