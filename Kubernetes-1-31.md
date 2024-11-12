@@ -190,7 +190,8 @@ spec:
 EOF
 done
 
-sudo chmod 777 /mnt/data/local-pv-0
+# use the command below if PersistentVolume hostPath.type is empty or Directory
+# sudo chmod 755 /mnt/data/local-pv-0
 ```
 
 --------------------------------
