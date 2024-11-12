@@ -170,21 +170,25 @@ provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 EOF
 
+for i in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+do
 kubectl apply -f /dev/stdin <<EOF
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: local-pv-0
+  name: local-pv-$i
 spec:
   capacity:
     storage: 8Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Recycle
   storageClassName: local-storage
   hostPath:
-    path: /mnt/data/local-pv-0
+    path: /mnt/kubernetes/local-pv-$i
+    type: DirectoryOrCreate
 EOF
+done
 
 sudo chmod 777 /mnt/data/local-pv-0
 ```
