@@ -172,6 +172,8 @@ EOF
 
 for i in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 do
+sudo mkdir -p /mnt/kubernetes/local-pv-$i
+sudo chmod 777 /mnt/kubernetes/local-pv-$i
 kubectl apply -f /dev/stdin <<EOF
 apiVersion: v1
 kind: PersistentVolume
@@ -186,12 +188,9 @@ spec:
   storageClassName: local-storage
   hostPath:
     path: /mnt/kubernetes/local-pv-$i
-    type: DirectoryOrCreate
+    type: Directory
 EOF
 done
-
-# use the command below if PersistentVolume hostPath.type is empty or Directory
-# sudo chmod 755 /mnt/data/local-pv-0
 ```
 
 --------------------------------
