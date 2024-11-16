@@ -245,13 +245,15 @@ EOF
 helm get notes redis | tee kubernetes-redis.md
 
 
-helm upgrade --install postgresql bitnami/postgresql --set image.tag=11 -f /dev/stdin <<EOF
+helm upgrade --install postgresql bitnami/postgresql -f /dev/stdin <<EOF base64 -d
 primary:
   service:
     type: LoadBalancer
 readReplicas:
   service:
     type: LoadBalancer
+image:
+  tag: 11
 EOF
 helm get notes postgresql | tee kubernetes-postgresql.md
 
