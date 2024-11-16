@@ -230,9 +230,13 @@ helm upgrade --install redis bitnami/redis -f /dev/stdin <<EOF
 master:
   service:
     type: LoadBalancer
+    # nodePorts:
+    #   redis: '30379'
 replica:
   service:
     type: LoadBalancer
+    # nodePorts:
+    #   redis: '30380'
 sentinel:
   service:
     type: LoadBalancer
