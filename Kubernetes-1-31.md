@@ -217,6 +217,8 @@ kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"
 
 ## Infra
 
+> Note: if you need a Redis cluster use the `redis-cluster` chart instead of the `redis` char below.
+
 ```sh
 helm upgrade --install rabbitmq bitnami/rabbitmq | tee kubernetes-rabbitmq.md
 helm upgrade --install redis bitnami/redis | tee kubernetes-redis.md
