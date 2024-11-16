@@ -254,11 +254,11 @@ externalAccess:
     enabled: true
   controller:
     service:
-      type: NodePort
+      type: LoadBalancer
     domain: localhost
   broker:
     service:
-      type: NodePort
+      type: LoadBalancer
     domain: localhost
 serviceAccount:
   create: true
