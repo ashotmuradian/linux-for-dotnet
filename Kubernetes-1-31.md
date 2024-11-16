@@ -220,9 +220,33 @@ kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"
 > Note: if you need a Redis cluster use the `redis-cluster` chart instead of the `redis` char below.
 
 ```sh
-helm upgrade --install rabbitmq bitnami/rabbitmq | tee kubernetes-rabbitmq.md
-helm upgrade --install redis bitnami/redis | tee kubernetes-redis.md
+helm upgrade --install rabbitmq bitnami/rabbitmq -f /dev/stdin <<EOF
+service:
+  type: LoadBalancer
+EOF
+helm get notes rabbitmq | tee kubernetes-rabbitmq.md
+
+helm upgrade --install redis bitnami/redis -f /dev/stdin <<EOF
+master:
+  service:
+    type: LoadBalancer
+replica:
+  service:
+    type: LoadBalancer
+sentinel:
+  service:
+    type: LoadBalancer
+  masterService:
+    type: LoadBalancer
+metrics:
+  service:
+    type: LoadBalancer
+EOF
+helm get notes redis | tee kubernetes-redis.md
+
+
 helm upgrade --install postgresql bitnami/postgresql --set image.tag=11 | tee kubernetes-postgresql.md
+
 helm upgrade --install kafka bitnami/kafka -f /dev/stdin <<EOF
 externalAccess:
   enabled: true
