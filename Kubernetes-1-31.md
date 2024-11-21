@@ -249,7 +249,7 @@ EOF
 helm get notes redis | tee kubernetes-redis.md
 
 
-helm upgrade --install postgresql bitnami/postgresql -f /dev/stdin <<EOF base64 -d
+helm upgrade --install postgresql bitnami/postgresql -f /dev/stdin <<EOF
 primary:
   service:
     type: LoadBalancer
