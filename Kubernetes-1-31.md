@@ -310,6 +310,7 @@ EOF
 
 ```toml
 # /etc/containerd/config.toml
+
 [plugins."io.containerd.grpc.v1.cri".registry.configs."127.0.0.1:5000"]
 
 [plugins."io.containerd.grpc.v1.cri".registry.configs."127.0.0.1:5000".tls]
@@ -318,6 +319,7 @@ EOF
 
 ```toml
 # /etc/containerd/config.toml
+
 [plugins."io.containerd.grpc.v1.cri".registry.mirrors."127.0.0.1:5000"]
   endpoint = ["http://127.0.0.1:5000"]
 ```
