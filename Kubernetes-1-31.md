@@ -293,3 +293,35 @@ sudo firewall-cmd --permanent --add-port=6379/tcp
 ```sh
 sudo systemctl stop firewalld
 ```
+
+## Registry
+
+```sh
+docker run -d -p 5000:5000 --restart always --name registry registry:2
+```
+
+```sh
+cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+    "insecure-registries": ["127.0.0.1:5000"]
+}
+EOF
+```
+
+```toml
+# /etc/containerd/config.toml
+[plugins."io.containerd.grpc.v1.cri".registry.configs."127.0.0.1:5000"]
+
+[plugins."io.containerd.grpc.v1.cri".registry.configs."127.0.0.1:5000".tls]
+  insecure_skip_verify = true
+```
+
+```toml
+# /etc/containerd/config.toml
+[plugins."io.containerd.grpc.v1.cri".registry.mirrors."127.0.0.1:5000"]
+  endpoint = ["http://127.0.0.1:5000"]
+```
+
+```sh
+sudo systemctl restart docker containerd kubelet
+```
