@@ -298,17 +298,17 @@ presets:
   logsCollection:
     enabled: true
 # config:
-# exporters:
-#   otlp:
-#     endpoint: "<SOME BACKEND>"
-# service:
-#   pipelines:
-#     traces:
-#       exporters: [ otlp ]
-#     metrics:
-#       exporters: [ otlp ]
-#     logs:
-#       exporters: [ otlp ]
+#   exporters:
+#     otlp:
+#       endpoint: "<SOME BACKEND>"
+#   service:
+#     pipelines:
+#       traces:
+#         exporters: [ otlp ]
+#       metrics:
+#         exporters: [ otlp ]
+#       logs:
+#         exporters: [ otlp ]
 EOF
 helm get notes otel-collector | tee kubernetes-otel-collector.md
 
@@ -323,17 +323,17 @@ presets:
   kubernetesEvents:
     enabled: true
 # config:
-# exporters:
-#   otlp:
-#     endpoint: "<SOME BACKEND>"
-# service:
-#   pipelines:
-#     traces:
-#       exporters: [ otlp ]
-#     metrics:
-#       exporters: [ otlp ]
-#     logs:
-#       exporters: [ otlp ]
+#   exporters:
+#     otlp:
+#       endpoint: "<SOME BACKEND>"
+#   service:
+#     pipelines:
+#       traces:
+#         exporters: [ otlp ]
+#       metrics:
+#         exporters: [ otlp ]
+#       logs:
+#         exporters: [ otlp ]
 EOF
 helm get notes otel-collector-cluster | tee kubernetes-otel-collector-cluster.md
 ```
