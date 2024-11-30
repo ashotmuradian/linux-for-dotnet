@@ -310,6 +310,7 @@ presets:
 #     logs:
 #       exporters: [ otlp ]
 EOF
+helm get notes otel-collector | tee kubernetes-otel-collector.md
 
 helm upgrade --install otel-collector-cluster open-telemetry/opentelemetry-collector -f /dev/stdin <<EOF
 mode: deployment
@@ -334,6 +335,7 @@ presets:
 #     logs:
 #       exporters: [ otlp ]
 EOF
+helm get notes otel-collector-cluster | tee kubernetes-otel-collector-cluster.md
 ```
 
 ```sh
