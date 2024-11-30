@@ -118,6 +118,7 @@ sudo install -o root -g root -m 0755 helm /usr/local/bin/helm
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+helm repo add jetstack https://charts.jetstack.io
 helm repo update
 ```
 
