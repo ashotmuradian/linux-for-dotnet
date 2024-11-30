@@ -116,11 +116,12 @@ sudo install -o root -g root -m 0755 helm /usr/local/bin/helm
 
 ```sh
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
+helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 helm repo update
 ```
 
 ```sh
-helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
 helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard | tee ./kubernetes-dashboard.md
 ```
 
@@ -284,8 +285,6 @@ broker:
   automountServiceAccountToken: true
 EOF
 helm get notes kafka | tee kubernetes-kafka.md
-
-helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
 
 helm upgrade --install otel-collector open-telemetry/opentelemetry-collector -f /dev/stdin <<EOF
 mode: daemonset
