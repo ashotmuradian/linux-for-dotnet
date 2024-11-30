@@ -284,6 +284,57 @@ broker:
   automountServiceAccountToken: true
 EOF
 helm get notes kafka | tee kubernetes-kafka.md
+
+helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
+
+helm upgrade --install otel-collector open-telemetry/opentelemetry-collector -f /dev/stdin <<EOF
+mode: daemonset
+image:
+  repository: otel/opentelemetry-collector-k8s
+presets:
+  kubernetesAttributes:
+    enabled: true
+  kubeletMetrics:
+    enabled: true
+  logsCollection:
+    enabled: true
+# config:
+# exporters:
+#   otlp:
+#     endpoint: "<SOME BACKEND>"
+# service:
+#   pipelines:
+#     traces:
+#       exporters: [ otlp ]
+#     metrics:
+#       exporters: [ otlp ]
+#     logs:
+#       exporters: [ otlp ]
+EOF
+
+helm upgrade --install otel-collector-cluster open-telemetry/opentelemetry-collector -f /dev/stdin <<EOF
+mode: deployment
+image:
+  repository: otel/opentelemetry-collector-k8s
+replicaCount: 1
+presets:
+  clusterMetrics:
+    enabled: true
+  kubernetesEvents:
+    enabled: true
+# config:
+# exporters:
+#   otlp:
+#     endpoint: "<SOME BACKEND>"
+# service:
+#   pipelines:
+#     traces:
+#       exporters: [ otlp ]
+#     metrics:
+#       exporters: [ otlp ]
+#     logs:
+#       exporters: [ otlp ]
+EOF
 ```
 
 ```sh
