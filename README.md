@@ -23,7 +23,17 @@
 
 ## Linux and Linux Tools
 
-Install latest linux distribution updates:
+Install latest Linux distribution updates:
+
+> Note: before upgrading the Linux distribution,
+> to use a mirror list which has a higher bandwidth,
+> override the GeoIP checks in the URLs of the Fedora repository files,
+> in each of the `/etc/yum.repos.d/fedora*.repo` files,
+> add or set the `country` URL query string parameter
+> to a proper 2-letter ISO country code, keep in mind,
+> your particular country may be not the one that provides a mirror list
+> having highest bandwidth,
+> [read more here](https://fedoraproject.org/wiki/Infrastructure/MirrorManager#Additional_options).
 
 ```bash
 sudo dnf upgrade
@@ -88,7 +98,7 @@ sudo dnf install \
   dotnet-sdk-8.0-source-built-artifacts
 ```
 
-> Note: Install these packages if you build the .NET SDK itself from the source code.
+> Note: install these packages if you build the .NET SDK itself from the source code.
 
 Install workloads (optional):
 
