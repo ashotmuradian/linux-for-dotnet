@@ -287,7 +287,7 @@ broker:
 EOF
 helm get notes kafka | tee kubernetes-kafka.md
 
-helm install cert-manager jetstack/cert-manager -f /dev/stdin <<EOF
+helm upgrade --install cert-manager jetstack/cert-manager -f /dev/stdin <<EOF
 crds:
   enabled: true
 EOF
