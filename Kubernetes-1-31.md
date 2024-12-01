@@ -287,6 +287,12 @@ broker:
 EOF
 helm get notes kafka | tee kubernetes-kafka.md
 
+helm install cert-manager jetstack/cert-manager -f /dev/stdin <<EOF
+crds:
+  enabled: true
+EOF
+helm get notes cert-manager | tee kubernetes-cert-manager.md
+
 helm upgrade --install otel-collector open-telemetry/opentelemetry-collector -f /dev/stdin <<EOF
 mode: daemonset
 image:
