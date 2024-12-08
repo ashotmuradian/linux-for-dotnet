@@ -293,6 +293,13 @@ crds:
 EOF
 helm get notes cert-manager | tee kubernetes-cert-manager.md
 
+helm upgrade --install zipkin bitnami/zipkin -f /dev/stdin <<EOF
+storageType: mem
+cassandra:
+  enabled: false
+EOF
+helm get notes zipkin | tee kubernetes-zipkin.md
+
 helm upgrade --install otel-collector open-telemetry/opentelemetry-collector -f /dev/stdin <<EOF
 mode: daemonset
 image:
