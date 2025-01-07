@@ -397,13 +397,6 @@ state = "/mnt/d/containerd/state"
 ```toml
 # /etc/containerd/config.toml
 
-[grpc]
-  address = "/mnt/d/containerd/containerd.sock"
-```
-
-```toml
-# /etc/containerd/config.toml
-
 [plugins."io.containerd.grpc.v1.cri".registry.configs."127.0.0.1:5000"]
 
 [plugins."io.containerd.grpc.v1.cri".registry.configs."127.0.0.1:5000".tls]
