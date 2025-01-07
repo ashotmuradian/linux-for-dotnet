@@ -174,8 +174,8 @@ EOF
 
 for i in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 do
-sudo mkdir -p /mnt/kubernetes/local-pv-$i
-sudo chmod 777 /mnt/kubernetes/local-pv-$i
+sudo mkdir -p /mnt/d/kubernetes/local-pv-$i
+sudo chmod 777 /mnt/d/kubernetes/local-pv-$i
 kubectl apply -f /dev/stdin <<EOF
 apiVersion: v1
 kind: PersistentVolume
@@ -189,7 +189,7 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: local-storage
   hostPath:
-    path: /mnt/kubernetes/local-pv-$i
+    path: /mnt/d/kubernetes/local-pv-$i
     type: Directory
 EOF
 done
@@ -360,7 +360,19 @@ sudo firewall-cmd --permanent --add-port=6379/tcp
 sudo systemctl stop firewalld
 ```
 
-## Registry and Docker Data Directory
+## Registry and Data Directories
+
+> To move existing data of `docker` and `containerd` use the following:
+> ```sh
+> sudo systemctl stop kubelet containerd docker
+> sudo rsync -aP /var/lib/docker/ /mnt/d/docker
+> sudo rsync -aP /var/lib/containerd/ /mnt/d/containerd/root
+> sudo rsync -aP /run/containerd/ /mnt/d/containerd/state
+> sudo chown -R root:root /mnt/d/docker
+> sudo chown -R root:root /mnt/d/containerd/root
+> sudo chown -R root:root /mnt/d/containerd/state
+> ```
+> And reboot.
 
 ```sh
 docker run -d -p 5000:5000 --restart always --name registry registry:2
@@ -373,6 +385,13 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
     "insecure-registries": ["127.0.0.1:5000"]
 }
 EOF
+```
+
+```tomal
+# /etc/containerd/config.toml
+
+root = "/mnt/d/containerd/root"
+state = "/mnt/d/containerd/state"
 ```
 
 ```toml
