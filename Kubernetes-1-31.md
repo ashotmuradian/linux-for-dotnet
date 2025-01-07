@@ -387,11 +387,18 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
 EOF
 ```
 
-```tomal
+```toml
 # /etc/containerd/config.toml
 
 root = "/mnt/d/containerd/root"
 state = "/mnt/d/containerd/state"
+```
+
+```toml
+# /etc/containerd/config.toml
+
+[grpc]
+  address = "/mnt/d/containerd/containerd.sock"
 ```
 
 ```toml
