@@ -360,7 +360,7 @@ sudo firewall-cmd --permanent --add-port=6379/tcp
 sudo systemctl stop firewalld
 ```
 
-## Registry
+## Registry and Docker Data Directory
 
 ```sh
 docker run -d -p 5000:5000 --restart always --name registry registry:2
@@ -369,6 +369,7 @@ docker run -d -p 5000:5000 --restart always --name registry registry:2
 ```sh
 cat <<EOF | sudo tee /etc/docker/daemon.json
 {
+    "data-root": "/mnt/d/docker",
     "insecure-registries": ["127.0.0.1:5000"]
 }
 EOF
