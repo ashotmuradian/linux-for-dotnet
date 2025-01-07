@@ -1,4 +1,4 @@
-# Kubernetes 1.32
+# Kubernetes 1.31
 
 ```sh
 # https://kubernetes.io/docs/reference/networking/ports-and-protocols/
@@ -9,7 +9,7 @@ sudo firewall-cmd --permanent --add-port=10256/tcp
 sudo firewall-cmd --permanent --add-port=10257/tcp
 sudo firewall-cmd --permanent --add-port=10259/tcp
 sudo firewall-cmd --permanent --add-port=2379-2380/tcp
-sudo firewall-cmd --permanent --add-port=30000-32767/tcp
+sudo firewall-cmd --permanent --add-port=30000-31767/tcp
 ```
 
 ```sh
@@ -36,10 +36,10 @@ sudo dnf remove -y zram-generator-defaults
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
-baseurl=https://pkgs.k8s.io/core:/stable:/v1.32/rpm/
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/
 enabled=1
 gpgcheck=1
-gpgkey=https://pkgs.k8s.io/core:/stable:/v1.32/rpm/repodata/repomd.xml.key
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
 exclude=kubelet kubeadm kubectl cri-tools kubernetes-cni
 EOF
 ```
@@ -68,7 +68,7 @@ sudo systemctl enable --now kubelet
 sudo kubeadm init --config /dev/stdin <<EOF
 kind: ClusterConfiguration
 apiVersion: kubeadm.k8s.io/v1beta4
-kubernetesVersion: v1.32.0
+kubernetesVersion: v1.31.0
 networking:
   podSubnet: "10.0.0.0/8"
 ---
