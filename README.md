@@ -16,6 +16,7 @@
   * [JetBrains Tools](#jetbrains-tools)
   * [Increase Limit of Maximum Number of Open Files](#increase-limit-of-maximum-number-of-open-files)
   * [Increase Limit of Maximum Number of Open Sockets for NPM](#increase-limit-of-maximum-number-of-open-sockets-for-npm)
+  * [Chrome Preferred Platform Backend](#chrome-preferred-platform-backend)
   * [Fonts](#fonts)
   * [Links](#links)
   * [Todo List](#todo-list)
@@ -323,6 +324,16 @@ sudo nano /etc/security/limits.conf
 
 ```bash
 npm -g config set maxsockets 32
+```
+
+## Chrome Preferred Platform Backend
+
+When using Wayland and opening sencond Chrome instance in incognito mode it causes lags
+in other Chrome instance, possibly even system-wide lags can be observed. To fix this
+issue set `Preferred Ozone platform` Chrome flag to `Wayland` or `Auto`.
+
+```
+chrome://flags/#ozone-platform-hint
 ```
 
 ## Fonts
