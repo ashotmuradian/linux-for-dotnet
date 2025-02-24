@@ -34,6 +34,9 @@ sudo dnf remove -y PackageKit-command-not-found
 sudo dnf install -y \
   nss-tools \
   dnf-plugins-core \
+  lstopo \
+  htop \
+  fuse-libs \
   ./google-chrome-stable_current_x86_64.rpm dotnet-sdk-8.0 \
   code \
   lens \
