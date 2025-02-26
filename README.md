@@ -21,7 +21,6 @@
     * [Others](#others)
   * [Fonts](#fonts)
   * [Links](#links)
-  * [Todo List](#todo-list)
 <!-- TOC -->
 
 ## Linux and Linux Tools
@@ -392,12 +391,3 @@ Exec=/opt/Lens/lens-desktop --enable-features=UseOzonePlatform --ozon-platform=a
 - [kubectl autocomplete](https://kubernetes.io/docs/reference/kubectl/quick-reference/#kubectl-autocomplete)
 - [terraform autocomplete](https://developer.hashicorp.com/terraform/cli/commands#shell-tab-completion)
 - [Install Microsoft Fonts](https://wiki.archlinux.org/title/Microsoft_fonts)
-
-## Todo List
-
-- [ ] kubectl installation
-- [ ] Docker installation
-  (prefer Docker Engine to Docker Desktop unless Kubernetes cluster is required to run in Docker)
-- [ ] Chrome installation
-- [ ] Edge installation
-- [ ] Script to download Java and compare SHA256 hash sum
