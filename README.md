@@ -343,7 +343,7 @@ chrome://flags/#ozone-platform-hint
 
 To improve other Chromium-based applications perfromance edit their respective `.desktop` files
 either in `/usr/share/applications` or `~/.local/share/applications` directory
-so that `--enable-features=UseOzonePlatform --ozon-platform=auto` are passed as parameters
+so that ` --enable-features=UseOzonePlatform --ozone-platform=auto` are passed as parameters
 to the executable files.
 
 Here is an example for `VS Code` and `Lens`:
@@ -351,14 +351,14 @@ Here is an example for `VS Code` and `Lens`:
 ```
 # /usr/share/applications/code.desktop
 # ...
-Exec=/usr/share/code/code --enable-features=UseOzonePlatform --ozon-platform=auto %F
+Exec=/usr/share/code/code --enable-features=UseOzonePlatform --ozone-platform=auto %F
 # ...
 ```
 
 ```
 # /usr/share/applications/lens-desktop.desktop
 # ...
-Exec=/opt/Lens/lens-desktop --enable-features=UseOzonePlatform --ozon-platform=auto %U
+Exec=/opt/Lens/lens-desktop --enable-features=UseOzonePlatform --ozone-platform=auto %U
 # ...
 ```
 
