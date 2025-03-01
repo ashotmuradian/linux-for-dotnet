@@ -35,6 +35,7 @@ sudo dnf install -y \
   nss-tools \
   dnf-plugins-core \
   lstopo \
+  perf \
   htop \
   fuse-libs \
   ./google-chrome-stable_current_x86_64.rpm dotnet-sdk-8.0 \
