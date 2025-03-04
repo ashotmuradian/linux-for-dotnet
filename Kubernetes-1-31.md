@@ -250,6 +250,27 @@ metrics:
 EOF
 helm get notes redis | tee kubernetes-redis.md
 
+helm upgrade --install valkey bitnami/valkey -f /dev/stdin <<EOF
+master:
+  service:
+    type: LoadBalancer
+    # nodePorts:
+    #   valkey: '30379'
+replica:
+  service:
+    type: LoadBalancer
+    # nodePorts:
+    #   valkey: '30380'
+sentinel:
+  service:
+    type: LoadBalancer
+  masterService:
+    type: LoadBalancer
+metrics:
+  service:
+    type: LoadBalancer
+EOF
+helm get notes valkey | tee kubernetes-valkey.md
 
 helm upgrade --install postgresql bitnami/postgresql -f /dev/stdin <<EOF
 primary:
