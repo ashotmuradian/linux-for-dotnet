@@ -13,6 +13,10 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 ```
 
 ```sh
+echo "X-GNOME-Autostart-enabled=false" | sudo tee -a /etc/xdg/autostart/org.gnome.Software.desktop
+```
+
+```sh
 sudo systemctl disable packagekit
 ```
 
