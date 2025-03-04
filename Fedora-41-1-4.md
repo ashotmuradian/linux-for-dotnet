@@ -11,6 +11,10 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 ```
 
 ```sh
+sudo systemctl disable packagekit
+```
+
+```sh
 sudo dnf upgrade -y
 ```
 
