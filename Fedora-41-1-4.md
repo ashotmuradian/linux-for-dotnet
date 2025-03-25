@@ -10,6 +10,8 @@ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
 gsettings set org.gnome.desktop.peripherals.keyboard delay 150
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 10
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
 ```
 
 ```sh
