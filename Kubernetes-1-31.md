@@ -434,3 +434,16 @@ state = "/mnt/d/containerd/state"
 ```sh
 sudo systemctl restart docker containerd kubelet
 ```
+
+## Change Maximum Number of Pods That Can Run on The Kubelet in Docker Desktop
+```sh
+docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh
+vi /var/lib/kubelet/config.yaml
+```
+
+Set the desired number at the root level of the config file.
+
+```
+maxPods: 200
+```
+
