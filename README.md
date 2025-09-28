@@ -364,6 +364,15 @@ Exec=/opt/Lens/lens-desktop --enable-features=UseOzonePlatform --ozone-platform-
 
 ## Fonts
 
+- Download [Nerd Fonts](https://nerdfonts.com)
+- ```sh
+  for file in ~/Downloads/nerd-fonts/*;
+   do unzip "$file" -d "/usr/share/fonts/$(basename "$file" .zip)" ;
+  done
+
+  fc-cache -f
+  ```
+
 - Copy a `C:\Windows\Fonts` directory to `/usr/share/fonts/microsoft-fonts`.
 - Download [Google Fonts](https://fonts.google.com/), extract and copy files to `/usr/share/fonts/google-fonts`.
 - Set appropriate font directories and files permissions and re-generate fonts cache.
