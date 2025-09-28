@@ -364,10 +364,11 @@ Exec=/opt/Lens/lens-desktop --enable-features=UseOzonePlatform --ozone-platform-
 
 ## Fonts
 
-- Download [Nerd Fonts](https://nerdfonts.com)
-- ```sh
+- Download [Nerd Fonts](https://nerdfonts.com).
+- Copy fonts.
+  ```sh
   for file in ~/Downloads/nerd-fonts/*;
-   do unzip "$file" -d "/usr/share/fonts/$(basename "$file" .zip)" ;
+   do unzip "$file" -d "/usr/share/fonts/$(basename "$file" .zip)"
   done
 
   fc-cache -f
